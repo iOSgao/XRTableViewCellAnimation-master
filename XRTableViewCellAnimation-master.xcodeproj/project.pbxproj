@@ -1,0 +1,509 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 46;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		0113E6691C8D2665005359F0 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0113E6681C8D2665005359F0 /* AppDelegate.swift */; };
+		0113E66B1C8D2665005359F0 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0113E66A1C8D2665005359F0 /* ViewController.swift */; };
+		0113E66E1C8D2665005359F0 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 0113E66C1C8D2665005359F0 /* Main.storyboard */; };
+		0113E6701C8D2665005359F0 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 0113E66F1C8D2665005359F0 /* Assets.xcassets */; };
+		0113E6731C8D2665005359F0 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 0113E6711C8D2665005359F0 /* LaunchScreen.storyboard */; };
+		0113E67E1C8D2665005359F0 /* XRTableViewCellAnimation_masterTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0113E67D1C8D2665005359F0 /* XRTableViewCellAnimation_masterTests.swift */; };
+		0113E6891C8D2665005359F0 /* XRTableViewCellAnimation_masterUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0113E6881C8D2665005359F0 /* XRTableViewCellAnimation_masterUITests.swift */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXContainerItemProxy section */
+		0113E67A1C8D2665005359F0 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 0113E65D1C8D2665005359F0 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 0113E6641C8D2665005359F0;
+			remoteInfo = "XRTableViewCellAnimation-master";
+		};
+		0113E6851C8D2665005359F0 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 0113E65D1C8D2665005359F0 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 0113E6641C8D2665005359F0;
+			remoteInfo = "XRTableViewCellAnimation-master";
+		};
+/* End PBXContainerItemProxy section */
+
+/* Begin PBXFileReference section */
+		0113E6651C8D2665005359F0 /* XRTableViewCellAnimation-master.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "XRTableViewCellAnimation-master.app"; sourceTree = BUILT_PRODUCTS_DIR; };
+		0113E6681C8D2665005359F0 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
+		0113E66A1C8D2665005359F0 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
+		0113E66D1C8D2665005359F0 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
+		0113E66F1C8D2665005359F0 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		0113E6721C8D2665005359F0 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
+		0113E6741C8D2665005359F0 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		0113E6791C8D2665005359F0 /* XRTableViewCellAnimation-masterTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "XRTableViewCellAnimation-masterTests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
+		0113E67D1C8D2665005359F0 /* XRTableViewCellAnimation_masterTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = XRTableViewCellAnimation_masterTests.swift; sourceTree = "<group>"; };
+		0113E67F1C8D2665005359F0 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		0113E6841C8D2665005359F0 /* XRTableViewCellAnimation-masterUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "XRTableViewCellAnimation-masterUITests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
+		0113E6881C8D2665005359F0 /* XRTableViewCellAnimation_masterUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = XRTableViewCellAnimation_masterUITests.swift; sourceTree = "<group>"; };
+		0113E68A1C8D2665005359F0 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		0113E6621C8D2665005359F0 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		0113E6761C8D2665005359F0 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		0113E6811C8D2665005359F0 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		0113E65C1C8D2665005359F0 = {
+			isa = PBXGroup;
+			children = (
+				0113E6671C8D2665005359F0 /* XRTableViewCellAnimation-master */,
+				0113E67C1C8D2665005359F0 /* XRTableViewCellAnimation-masterTests */,
+				0113E6871C8D2665005359F0 /* XRTableViewCellAnimation-masterUITests */,
+				0113E6661C8D2665005359F0 /* Products */,
+			);
+			sourceTree = "<group>";
+		};
+		0113E6661C8D2665005359F0 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				0113E6651C8D2665005359F0 /* XRTableViewCellAnimation-master.app */,
+				0113E6791C8D2665005359F0 /* XRTableViewCellAnimation-masterTests.xctest */,
+				0113E6841C8D2665005359F0 /* XRTableViewCellAnimation-masterUITests.xctest */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		0113E6671C8D2665005359F0 /* XRTableViewCellAnimation-master */ = {
+			isa = PBXGroup;
+			children = (
+				0113E6681C8D2665005359F0 /* AppDelegate.swift */,
+				0113E66A1C8D2665005359F0 /* ViewController.swift */,
+				0113E66C1C8D2665005359F0 /* Main.storyboard */,
+				0113E66F1C8D2665005359F0 /* Assets.xcassets */,
+				0113E6711C8D2665005359F0 /* LaunchScreen.storyboard */,
+				0113E6741C8D2665005359F0 /* Info.plist */,
+			);
+			path = "XRTableViewCellAnimation-master";
+			sourceTree = "<group>";
+		};
+		0113E67C1C8D2665005359F0 /* XRTableViewCellAnimation-masterTests */ = {
+			isa = PBXGroup;
+			children = (
+				0113E67D1C8D2665005359F0 /* XRTableViewCellAnimation_masterTests.swift */,
+				0113E67F1C8D2665005359F0 /* Info.plist */,
+			);
+			path = "XRTableViewCellAnimation-masterTests";
+			sourceTree = "<group>";
+		};
+		0113E6871C8D2665005359F0 /* XRTableViewCellAnimation-masterUITests */ = {
+			isa = PBXGroup;
+			children = (
+				0113E6881C8D2665005359F0 /* XRTableViewCellAnimation_masterUITests.swift */,
+				0113E68A1C8D2665005359F0 /* Info.plist */,
+			);
+			path = "XRTableViewCellAnimation-masterUITests";
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		0113E6641C8D2665005359F0 /* XRTableViewCellAnimation-master */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 0113E68D1C8D2665005359F0 /* Build configuration list for PBXNativeTarget "XRTableViewCellAnimation-master" */;
+			buildPhases = (
+				0113E6611C8D2665005359F0 /* Sources */,
+				0113E6621C8D2665005359F0 /* Frameworks */,
+				0113E6631C8D2665005359F0 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = "XRTableViewCellAnimation-master";
+			productName = "XRTableViewCellAnimation-master";
+			productReference = 0113E6651C8D2665005359F0 /* XRTableViewCellAnimation-master.app */;
+			productType = "com.apple.product-type.application";
+		};
+		0113E6781C8D2665005359F0 /* XRTableViewCellAnimation-masterTests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 0113E6901C8D2665005359F0 /* Build configuration list for PBXNativeTarget "XRTableViewCellAnimation-masterTests" */;
+			buildPhases = (
+				0113E6751C8D2665005359F0 /* Sources */,
+				0113E6761C8D2665005359F0 /* Frameworks */,
+				0113E6771C8D2665005359F0 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				0113E67B1C8D2665005359F0 /* PBXTargetDependency */,
+			);
+			name = "XRTableViewCellAnimation-masterTests";
+			productName = "XRTableViewCellAnimation-masterTests";
+			productReference = 0113E6791C8D2665005359F0 /* XRTableViewCellAnimation-masterTests.xctest */;
+			productType = "com.apple.product-type.bundle.unit-test";
+		};
+		0113E6831C8D2665005359F0 /* XRTableViewCellAnimation-masterUITests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 0113E6931C8D2665005359F0 /* Build configuration list for PBXNativeTarget "XRTableViewCellAnimation-masterUITests" */;
+			buildPhases = (
+				0113E6801C8D2665005359F0 /* Sources */,
+				0113E6811C8D2665005359F0 /* Frameworks */,
+				0113E6821C8D2665005359F0 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				0113E6861C8D2665005359F0 /* PBXTargetDependency */,
+			);
+			name = "XRTableViewCellAnimation-masterUITests";
+			productName = "XRTableViewCellAnimation-masterUITests";
+			productReference = 0113E6841C8D2665005359F0 /* XRTableViewCellAnimation-masterUITests.xctest */;
+			productType = "com.apple.product-type.bundle.ui-testing";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		0113E65D1C8D2665005359F0 /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				LastSwiftUpdateCheck = 0720;
+				LastUpgradeCheck = 0720;
+				ORGANIZATIONNAME = X.R;
+				TargetAttributes = {
+					0113E6641C8D2665005359F0 = {
+						CreatedOnToolsVersion = 7.2;
+					};
+					0113E6781C8D2665005359F0 = {
+						CreatedOnToolsVersion = 7.2;
+						TestTargetID = 0113E6641C8D2665005359F0;
+					};
+					0113E6831C8D2665005359F0 = {
+						CreatedOnToolsVersion = 7.2;
+						TestTargetID = 0113E6641C8D2665005359F0;
+					};
+				};
+			};
+			buildConfigurationList = 0113E6601C8D2665005359F0 /* Build configuration list for PBXProject "XRTableViewCellAnimation-master" */;
+			compatibilityVersion = "Xcode 3.2";
+			developmentRegion = English;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+				Base,
+			);
+			mainGroup = 0113E65C1C8D2665005359F0;
+			productRefGroup = 0113E6661C8D2665005359F0 /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				0113E6641C8D2665005359F0 /* XRTableViewCellAnimation-master */,
+				0113E6781C8D2665005359F0 /* XRTableViewCellAnimation-masterTests */,
+				0113E6831C8D2665005359F0 /* XRTableViewCellAnimation-masterUITests */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		0113E6631C8D2665005359F0 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				0113E6731C8D2665005359F0 /* LaunchScreen.storyboard in Resources */,
+				0113E6701C8D2665005359F0 /* Assets.xcassets in Resources */,
+				0113E66E1C8D2665005359F0 /* Main.storyboard in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		0113E6771C8D2665005359F0 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		0113E6821C8D2665005359F0 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		0113E6611C8D2665005359F0 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				0113E66B1C8D2665005359F0 /* ViewController.swift in Sources */,
+				0113E6691C8D2665005359F0 /* AppDelegate.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		0113E6751C8D2665005359F0 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				0113E67E1C8D2665005359F0 /* XRTableViewCellAnimation_masterTests.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		0113E6801C8D2665005359F0 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				0113E6891C8D2665005359F0 /* XRTableViewCellAnimation_masterUITests.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		0113E67B1C8D2665005359F0 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 0113E6641C8D2665005359F0 /* XRTableViewCellAnimation-master */;
+			targetProxy = 0113E67A1C8D2665005359F0 /* PBXContainerItemProxy */;
+		};
+		0113E6861C8D2665005359F0 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 0113E6641C8D2665005359F0 /* XRTableViewCellAnimation-master */;
+			targetProxy = 0113E6851C8D2665005359F0 /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
+
+/* Begin PBXVariantGroup section */
+		0113E66C1C8D2665005359F0 /* Main.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				0113E66D1C8D2665005359F0 /* Base */,
+			);
+			name = Main.storyboard;
+			sourceTree = "<group>";
+		};
+		0113E6711C8D2665005359F0 /* LaunchScreen.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				0113E6721C8D2665005359F0 /* Base */,
+			);
+			name = LaunchScreen.storyboard;
+			sourceTree = "<group>";
+		};
+/* End PBXVariantGroup section */
+
+/* Begin XCBuildConfiguration section */
+		0113E68B1C8D2665005359F0 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_TESTABILITY = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 9.2;
+				MTL_ENABLE_DEBUG_INFO = YES;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = iphoneos;
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+			};
+			name = Debug;
+		};
+		0113E68C1C8D2665005359F0 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 9.2;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				SDKROOT = iphoneos;
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
+		0113E68E1C8D2665005359F0 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				INFOPLIST_FILE = "XRTableViewCellAnimation-master/Info.plist";
+				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = "com.kkguan.XRTableViewCellAnimation-master";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+			};
+			name = Debug;
+		};
+		0113E68F1C8D2665005359F0 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				INFOPLIST_FILE = "XRTableViewCellAnimation-master/Info.plist";
+				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = "com.kkguan.XRTableViewCellAnimation-master";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+			};
+			name = Release;
+		};
+		0113E6911C8D2665005359F0 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				INFOPLIST_FILE = "XRTableViewCellAnimation-masterTests/Info.plist";
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = "com.kkguan.XRTableViewCellAnimation-masterTests";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/XRTableViewCellAnimation-master.app/XRTableViewCellAnimation-master";
+			};
+			name = Debug;
+		};
+		0113E6921C8D2665005359F0 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				INFOPLIST_FILE = "XRTableViewCellAnimation-masterTests/Info.plist";
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = "com.kkguan.XRTableViewCellAnimation-masterTests";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/XRTableViewCellAnimation-master.app/XRTableViewCellAnimation-master";
+			};
+			name = Release;
+		};
+		0113E6941C8D2665005359F0 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				INFOPLIST_FILE = "XRTableViewCellAnimation-masterUITests/Info.plist";
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = "com.kkguan.XRTableViewCellAnimation-masterUITests";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TEST_TARGET_NAME = "XRTableViewCellAnimation-master";
+				USES_XCTRUNNER = YES;
+			};
+			name = Debug;
+		};
+		0113E6951C8D2665005359F0 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				INFOPLIST_FILE = "XRTableViewCellAnimation-masterUITests/Info.plist";
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = "com.kkguan.XRTableViewCellAnimation-masterUITests";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TEST_TARGET_NAME = "XRTableViewCellAnimation-master";
+				USES_XCTRUNNER = YES;
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		0113E6601C8D2665005359F0 /* Build configuration list for PBXProject "XRTableViewCellAnimation-master" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				0113E68B1C8D2665005359F0 /* Debug */,
+				0113E68C1C8D2665005359F0 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		0113E68D1C8D2665005359F0 /* Build configuration list for PBXNativeTarget "XRTableViewCellAnimation-master" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				0113E68E1C8D2665005359F0 /* Debug */,
+				0113E68F1C8D2665005359F0 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+		};
+		0113E6901C8D2665005359F0 /* Build configuration list for PBXNativeTarget "XRTableViewCellAnimation-masterTests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				0113E6911C8D2665005359F0 /* Debug */,
+				0113E6921C8D2665005359F0 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+		};
+		0113E6931C8D2665005359F0 /* Build configuration list for PBXNativeTarget "XRTableViewCellAnimation-masterUITests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				0113E6941C8D2665005359F0 /* Debug */,
+				0113E6951C8D2665005359F0 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = 0113E65D1C8D2665005359F0 /* Project object */;
+}
