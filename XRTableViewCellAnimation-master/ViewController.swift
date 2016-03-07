@@ -75,6 +75,10 @@ class ViewController: UIViewController, UITableViewDelegate, UITableViewDataSour
         // Dispose of any resources that can be recreated.
     }
     
+    override func preferredStatusBarStyle() -> UIStatusBarStyle {
+        return .LightContent
+    }
+    
     // MARK: UITableViewDelegate
     
     func numberOfSectionsInTableView(tableView: UITableView) -> Int {
@@ -102,7 +106,7 @@ class ViewController: UIViewController, UITableViewDelegate, UITableViewDataSour
     func tableView(tableView: UITableView, heightForRowAtIndexPath indexPath: NSIndexPath) -> CGFloat {
         let model = self.dataArray![indexPath.row] as? CategoryModel
         if model!.isShowPicture {
-            return 160.0
+            return 150.0
         }else {
             return 200.0
         }
@@ -112,7 +116,7 @@ class ViewController: UIViewController, UITableViewDelegate, UITableViewDataSour
         
         let model = self.dataArray![indexPath.row] as? CategoryModel
         model!.isShowPicture = !model!.isShowPicture
-
+        
         let cell = tableView.cellForRowAtIndexPath(indexPath) as? CategoryCell
         cell!.cellClickWithModel(model)
         
