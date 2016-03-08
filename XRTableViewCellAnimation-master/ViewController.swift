@@ -7,7 +7,7 @@
 //
 
 /**
- *  UITableViewCellAnimation 模仿寺库奢侈品App动画
+ *  实现UITableViewCell开合动画
  *  by X.R
  */
 
@@ -46,9 +46,9 @@ class ViewController: UIViewController, UITableViewDelegate, UITableViewDataSour
         
         for var i = 0; i < 10; i++ {
             let model = CategoryModel()
-            model.imageURL = "http://pic18.nipic.com/20120111/6215114_001408692000_2.jpg"
+            model.imageURL = "http://attach.scimg.cn/month_1302/19/c5f4b70093e25c4ba861dbd38c33ab15_orig.jpg"
             model.isShowPicture = true
-            model.categoryTitle = "腕表"
+            model.categoryTitle = "首饰" + "\n" + "Jewelry"
             self.dataArray?.append(model)
         }
     }
@@ -110,7 +110,7 @@ class ViewController: UIViewController, UITableViewDelegate, UITableViewDataSour
         if model!.isShowPicture {
             return 150.0
         }else {
-            return 200.0
+            return 240.0
         }
     }
     
@@ -121,34 +121,54 @@ class ViewController: UIViewController, UITableViewDelegate, UITableViewDataSour
             currentModel!.isShowPicture = !currentModel!.isShowPicture
             
             let cell = tableView.cellForRowAtIndexPath(indexPath) as? CategoryCell
-            cell!.cellClickWithModel(currentModel)
             
             let currentCellRect = tableView.rectForRowAtIndexPath(indexPath)
             
             if tableView.contentOffset.y > currentCellRect.origin.y {
                 // 当前cell的可视区域超出了tableView的top
-                tableView.scrollToRowAtIndexPath(indexPath, atScrollPosition: .Top, animated: true)
-            }else if tableView.contentOffset.y + tableView.height - currentCellRect.origin.y < cell!.height {
-                // 当前cell的可视区域超出了tableView的bottom
-                tableView.scrollToRowAtIndexPath(indexPath, atScrollPosition: .Bottom, animated: true)
+                let delay = 0.1 * Double(NSEC_PER_SEC)
+                let time = dispatch_time(DISPATCH_TIME_NOW, Int64(delay))
+                dispatch_after(time, dispatch_get_main_queue(), { () -> Void in
+                    tableView.scrollToRowAtIndexPath(indexPath, atScrollPosition: .Top, animated: true)
+                })
+            }else if tableView.contentOffset.y + tableView.height - currentCellRect.origin.y <= cell!.height {
+                // 当前cell的可视区域超出了tableView的bottom delay以解决cell没法滚动到最底部的bug 详见：http://stackoverflow.com/questions/25686490/ios-8-auto-cell-height-cant-scroll-to-last-row
+                let delay = 0.1 * Double(NSEC_PER_SEC)
+                let time = dispatch_time(DISPATCH_TIME_NOW, Int64(delay))
+                dispatch_after(time, dispatch_get_main_queue(), { () -> Void in
+                    tableView.scrollToRowAtIndexPath(indexPath, atScrollPosition: .Bottom, animated: true)
+                })
             }
             self.lastIndexPath = indexPath
+            cell!.cellClickWithModel(currentModel)
+            
+            // 动态修改cell的高度
+            tableView.beginUpdates()
+            tableView.endUpdates()
         }else {
             if self.lastIndexPath!.row != indexPath.row {
                 let currentModel = self.dataArray![indexPath.row] as? CategoryModel
                 currentModel!.isShowPicture = !currentModel!.isShowPicture
                 
                 let cell = tableView.cellForRowAtIndexPath(indexPath) as? CategoryCell
-                cell!.cellClickWithModel(currentModel)
                 let currentCellRect = tableView.rectForRowAtIndexPath(indexPath)
                 
                 if tableView.contentOffset.y > currentCellRect.origin.y {
                     // 当前cell的可视区域超出了tableView的top
-                    tableView.scrollToRowAtIndexPath(indexPath, atScrollPosition: .Top, animated: true)
-                }else if tableView.contentOffset.y + tableView.height - currentCellRect.origin.y < cell!.height {
-                    // 当前cell的可视区域超出了tableView的bottom
-                    tableView.scrollToRowAtIndexPath(indexPath, atScrollPosition: .Bottom, animated: true)
+                    let delay = 0.1 * Double(NSEC_PER_SEC)
+                    let time = dispatch_time(DISPATCH_TIME_NOW, Int64(delay))
+                    dispatch_after(time, dispatch_get_main_queue(), { () -> Void in
+                        tableView.scrollToRowAtIndexPath(indexPath, atScrollPosition: .Top, animated: true)
+                    })
+                }else if tableView.contentOffset.y + tableView.height - currentCellRect.origin.y <= cell!.height {
+                    // 当前cell的可视区域超出了tableView的bottom delay以解决cell没法滚动到最底部的bug 详见：http://stackoverflow.com/questions/25686490/ios-8-auto-cell-height-cant-scroll-to-last-row
+                    let delay = 0.1 * Double(NSEC_PER_SEC)
+                    let time = dispatch_time(DISPATCH_TIME_NOW, Int64(delay))
+                    dispatch_after(time, dispatch_get_main_queue(), { () -> Void in
+                        tableView.scrollToRowAtIndexPath(indexPath, atScrollPosition: .Bottom, animated: true)
+                    })
                 }
+                cell!.cellClickWithModel(currentModel)
                 
                 let lastModel = self.dataArray![self.lastIndexPath!.row] as? CategoryModel
                 lastModel?.isShowPicture = true
@@ -157,29 +177,42 @@ class ViewController: UIViewController, UITableViewDelegate, UITableViewDataSour
                     last.cellClickWithModel(lastModel)
                 }
                 self.lastIndexPath = indexPath
+                // 动态修改cell的高度
+                tableView.beginUpdates()
+                tableView.endUpdates()
+                
             }else {
                 let currentModel = self.dataArray![indexPath.row] as? CategoryModel
                 currentModel!.isShowPicture = !currentModel!.isShowPicture
                 
                 let cell = tableView.cellForRowAtIndexPath(indexPath) as? CategoryCell
-                cell!.cellClickWithModel(currentModel)
+                // 滚动tableView 到 top 或者 bottom
                 let currentCellRect = tableView.rectForRowAtIndexPath(indexPath)
-                print("\(currentCellRect)  \(tableView.contentOffset.y) \(cell!.height)")
                 
                 if tableView.contentOffset.y > currentCellRect.origin.y {
                     // 当前cell的可视区域超出了tableView的top
-                    tableView.scrollToRowAtIndexPath(indexPath, atScrollPosition: .Top, animated: true)
-                }else if tableView.contentOffset.y + tableView.height - currentCellRect.origin.y < cell!.height {
-                    // 当前cell的可视区域超出了tableView的bottom
-                    tableView.scrollToRowAtIndexPath(indexPath, atScrollPosition: .Bottom, animated: true)
+                    let delay = 0.1 * Double(NSEC_PER_SEC)
+                    let time = dispatch_time(DISPATCH_TIME_NOW, Int64(delay))
+                    dispatch_after(time, dispatch_get_main_queue(), { () -> Void in
+                        tableView.scrollToRowAtIndexPath(indexPath, atScrollPosition: .Top, animated: true)
+                    })
+                }else if tableView.contentOffset.y + tableView.height - currentCellRect.origin.y <= cell!.height {
+                    // 当前cell的可视区域超出了tableView的bottom delay以解决cell没法滚动到最底部的bug 详见：http://stackoverflow.com/questions/25686490/ios-8-auto-cell-height-cant-scroll-to-last-row
+                    let delay = 0.1 * Double(NSEC_PER_SEC)
+                    let time = dispatch_time(DISPATCH_TIME_NOW, Int64(delay))
+                    dispatch_after(time, dispatch_get_main_queue(), { () -> Void in
+                        tableView.scrollToRowAtIndexPath(indexPath, atScrollPosition: .Bottom, animated: true)
+                    })
                 }
+                
+                cell!.cellClickWithModel(currentModel)
+                
                 self.lastIndexPath = indexPath
+                // 动态改变cell的高度
+                tableView.beginUpdates()
+                tableView.endUpdates()
             }
         }
-        
-        // 动态修改cell的高度
-        tableView.beginUpdates()
-        tableView.endUpdates()
     }
 }
 
