@@ -39,6 +39,7 @@ class ViewController: UIViewController, UITableViewDelegate, UITableViewDataSour
 
     var tableVw: UITableView!
     var dataArray: [AnyObject]?
+    var lastIndexPath: NSIndexPath?
     
     func initDataArray() {
         self.dataArray = Array()
@@ -68,6 +69,7 @@ class ViewController: UIViewController, UITableViewDelegate, UITableViewDataSour
         
         self.initDataArray()
         self.setupTable()
+        lastIndexPath = NSIndexPath(forRow: -1, inSection: 0)
     }
 
     override func didReceiveMemoryWarning() {
@@ -114,11 +116,66 @@ class ViewController: UIViewController, UITableViewDelegate, UITableViewDataSour
     
     func tableView(tableView: UITableView, didSelectRowAtIndexPath indexPath: NSIndexPath) {
         
-        let model = self.dataArray![indexPath.row] as? CategoryModel
-        model!.isShowPicture = !model!.isShowPicture
-        
-        let cell = tableView.cellForRowAtIndexPath(indexPath) as? CategoryCell
-        cell!.cellClickWithModel(model)
+        if self.lastIndexPath!.row == -1 {
+            let currentModel = self.dataArray![indexPath.row] as? CategoryModel
+            currentModel!.isShowPicture = !currentModel!.isShowPicture
+            
+            let cell = tableView.cellForRowAtIndexPath(indexPath) as? CategoryCell
+            cell!.cellClickWithModel(currentModel)
+            
+            let currentCellRect = tableView.rectForRowAtIndexPath(indexPath)
+            
+            if tableView.contentOffset.y > currentCellRect.origin.y {
+                // 当前cell的可视区域超出了tableView的top
+                tableView.scrollToRowAtIndexPath(indexPath, atScrollPosition: .Top, animated: true)
+            }else if tableView.contentOffset.y + tableView.height - currentCellRect.origin.y < cell!.height {
+                // 当前cell的可视区域超出了tableView的bottom
+                tableView.scrollToRowAtIndexPath(indexPath, atScrollPosition: .Bottom, animated: true)
+            }
+            self.lastIndexPath = indexPath
+        }else {
+            if self.lastIndexPath!.row != indexPath.row {
+                let currentModel = self.dataArray![indexPath.row] as? CategoryModel
+                currentModel!.isShowPicture = !currentModel!.isShowPicture
+                
+                let cell = tableView.cellForRowAtIndexPath(indexPath) as? CategoryCell
+                cell!.cellClickWithModel(currentModel)
+                let currentCellRect = tableView.rectForRowAtIndexPath(indexPath)
+                
+                if tableView.contentOffset.y > currentCellRect.origin.y {
+                    // 当前cell的可视区域超出了tableView的top
+                    tableView.scrollToRowAtIndexPath(indexPath, atScrollPosition: .Top, animated: true)
+                }else if tableView.contentOffset.y + tableView.height - currentCellRect.origin.y < cell!.height {
+                    // 当前cell的可视区域超出了tableView的bottom
+                    tableView.scrollToRowAtIndexPath(indexPath, atScrollPosition: .Bottom, animated: true)
+                }
+                
+                let lastModel = self.dataArray![self.lastIndexPath!.row] as? CategoryModel
+                lastModel?.isShowPicture = true
+                let lastCell = tableView.cellForRowAtIndexPath(self.lastIndexPath!) as? CategoryCell
+                if let last = lastCell {
+                    last.cellClickWithModel(lastModel)
+                }
+                self.lastIndexPath = indexPath
+            }else {
+                let currentModel = self.dataArray![indexPath.row] as? CategoryModel
+                currentModel!.isShowPicture = !currentModel!.isShowPicture
+                
+                let cell = tableView.cellForRowAtIndexPath(indexPath) as? CategoryCell
+                cell!.cellClickWithModel(currentModel)
+                let currentCellRect = tableView.rectForRowAtIndexPath(indexPath)
+                print("\(currentCellRect)  \(tableView.contentOffset.y) \(cell!.height)")
+                
+                if tableView.contentOffset.y > currentCellRect.origin.y {
+                    // 当前cell的可视区域超出了tableView的top
+                    tableView.scrollToRowAtIndexPath(indexPath, atScrollPosition: .Top, animated: true)
+                }else if tableView.contentOffset.y + tableView.height - currentCellRect.origin.y < cell!.height {
+                    // 当前cell的可视区域超出了tableView的bottom
+                    tableView.scrollToRowAtIndexPath(indexPath, atScrollPosition: .Bottom, animated: true)
+                }
+                self.lastIndexPath = indexPath
+            }
+        }
         
         // 动态修改cell的高度
         tableView.beginUpdates()

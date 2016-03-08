@@ -21,7 +21,7 @@ class CategoryCell: UITableViewCell {
     var backVw : UIView?
     var cateLabel: UILabel?
     var overVw: UIView?
-    var topBtn:  UIButton?
+    var topBtn:  UIView?
     var topLabel: UILabel?
     var productVw: UIView?
     var isShow: Bool = true
@@ -49,6 +49,7 @@ class CategoryCell: UITableViewCell {
         
         self.topBtn = UIButton()
         self.topBtn?.backgroundColor = UIColor.blackColor().colorWithAlphaComponent(0.9)
+        self.topBtn?.userInteractionEnabled = false
         self.topLabel = UILabel()
         self.topLabel?.font = UIFont.systemFontOfSize(14.0)
         self.topLabel?.textColor = UIColor.whiteColor()
