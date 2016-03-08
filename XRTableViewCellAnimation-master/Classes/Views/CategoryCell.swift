@@ -42,7 +42,7 @@ class CategoryCell: UITableViewCell {
         self.imageVw?.addSubview(self.backVw!)
         
         self.cateLabel = UILabel()
-        self.cateLabel?.font = UIFont.boldSystemFontOfSize(15.0)
+        self.cateLabel?.font = UIFont.systemFontOfSize(15.0)
         self.cateLabel?.numberOfLines = 0
         self.cateLabel?.textColor = UIColor.whiteColor()
         self.cateLabel?.textAlignment = NSTextAlignment.Center
