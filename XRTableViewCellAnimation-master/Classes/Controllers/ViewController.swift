@@ -102,6 +102,12 @@ class ViewController: UIViewController, UITableViewDelegate, UITableViewDataSour
         
         let model = self.dataArray![indexPath.row] as? CategoryModel
         cell?.configCellWithModel(model!)
+        cell?.setClickClosure { (btn) -> Void in
+            print("button.tag: \(btn!.tag)")
+            
+            let productVc = ProductViewController()
+            self.navigationController?.pushViewController(productVc, animated: true)
+        }
         
         return cell!
     }

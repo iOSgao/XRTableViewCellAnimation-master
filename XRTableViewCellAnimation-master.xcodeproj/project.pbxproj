@@ -18,6 +18,7 @@
 		0113E6A81C8D5884005359F0 /* AFImageExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0113E6A61C8D5884005359F0 /* AFImageExtension.swift */; };
 		0113E6A91C8D5884005359F0 /* AFImageVIewExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0113E6A71C8D5884005359F0 /* AFImageVIewExtension.swift */; };
 		0115079E1C8ED0BC00839CBB /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0115079D1C8ED0BC00839CBB /* ViewController.swift */; };
+		011507A01C8ED94C00839CBB /* ProductViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0115079F1C8ED94C00839CBB /* ProductViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -55,6 +56,7 @@
 		0113E6A61C8D5884005359F0 /* AFImageExtension.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AFImageExtension.swift; sourceTree = "<group>"; };
 		0113E6A71C8D5884005359F0 /* AFImageVIewExtension.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AFImageVIewExtension.swift; sourceTree = "<group>"; };
 		0115079D1C8ED0BC00839CBB /* ViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
+		0115079F1C8ED94C00839CBB /* ProductViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ProductViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -156,6 +158,7 @@
 			isa = PBXGroup;
 			children = (
 				0115079D1C8ED0BC00839CBB /* ViewController.swift */,
+				0115079F1C8ED94C00839CBB /* ProductViewController.swift */,
 			);
 			path = Controllers;
 			sourceTree = "<group>";
@@ -319,6 +322,7 @@
 				0115079E1C8ED0BC00839CBB /* ViewController.swift in Sources */,
 				0113E6A81C8D5884005359F0 /* AFImageExtension.swift in Sources */,
 				0113E69E1C8D2AE0005359F0 /* CategoryModel.swift in Sources */,
+				011507A01C8ED94C00839CBB /* ProductViewController.swift in Sources */,
 				0113E6A91C8D5884005359F0 /* AFImageVIewExtension.swift in Sources */,
 				0113E6691C8D2665005359F0 /* AppDelegate.swift in Sources */,
 				0113E6A31C8D2B17005359F0 /* CategoryCell.swift in Sources */,

@@ -15,6 +15,8 @@ func RGBColor(r: CGFloat, g: CGFloat, b: CGFloat) -> UIColor {
     return UIColor.init(red: r / 255.0, green: g / 255.0, blue: b / 255.0, alpha: 1.0)
 }
 
+typealias ClickCloSure = (btn: UIButton?) -> Void
+
 class CategoryCell: UITableViewCell {
     
     var imageVw: UIImageView?
@@ -25,6 +27,7 @@ class CategoryCell: UITableViewCell {
     var topLabel: UILabel?
     var productVw: UIView?
     var isShow: Bool = true
+    var closure: ((btn: UIButton?) -> Void)?
     
     override init(style: UITableViewCellStyle, reuseIdentifier: String?) {
         super.init(style: style, reuseIdentifier: reuseIdentifier)
@@ -67,13 +70,12 @@ class CategoryCell: UITableViewCell {
         
         // 产品展示
         for var i = 0; i < 9; i++ {
-            let proLabel = UILabel()
-            proLabel.textColor = RGBColor(117, g: 117, b: 117)
-            proLabel.font = UIFont.systemFontOfSize(12.0)
-            proLabel.textAlignment = .Center
-            proLabel.text = "项饰/吊坠"
-            proLabel.tag = productBaseTag + i
-            self.productVw?.addSubview(proLabel)
+            let proBtn = UIButton()
+            let attributeStr = NSAttributedString(string: "项饰/吊坠", attributes: [NSFontAttributeName : UIFont.systemFontOfSize(12.0), NSForegroundColorAttributeName : RGBColor(117, g: 117, b: 117)])
+            proBtn.setAttributedTitle(attributeStr, forState: .Normal)
+            proBtn.tag = productBaseTag + i
+            proBtn.addTarget(self, action: "proBtnClick:", forControlEvents: .TouchUpInside)
+            self.productVw?.addSubview(proBtn)
         }
     }
     
@@ -103,9 +105,19 @@ class CategoryCell: UITableViewCell {
         let border: CGFloat    = 0.0
         let topHeight: CGFloat = 20.0
         for var i = 0; i < 9; i++ {
-            let proLabel = self.overVw?.viewWithTag(productBaseTag + i)
-            proLabel?.frame = CGRectMake(border + (proWidth + border) * CGFloat((Int(i) % 3)), topHeight + (topHeight + proHeight) * CGFloat(Int(i) / 3), proWidth, proHeight)
+            let proBtn = self.overVw?.viewWithTag(productBaseTag + i)
+            proBtn?.frame = CGRectMake(border + (proWidth + border) * CGFloat((Int(i) % 3)), topHeight + (topHeight + proHeight) * CGFloat(Int(i) / 3), proWidth, proHeight)
         }
+    }
+    
+    func proBtnClick(btn: UIButton?) {
+        if self.closure != nil {
+            self.closure!(btn: btn)
+        }
+    }
+    
+    func setClickClosure(clickClosure: ClickCloSure) {
+        self.closure = clickClosure
     }
     
     func configCellWithModel(model: CategoryModel?) {
