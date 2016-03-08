@@ -7,7 +7,7 @@
 //
 
 /**
- *  实现UITableViewCell开合动画
+ *  实现UITableViewCell展开/闭合动画
  *  by X.R
  */
 
@@ -40,6 +40,7 @@ class ViewController: UIViewController, UITableViewDelegate, UITableViewDataSour
     var tableVw: UITableView!
     var dataArray: [AnyObject]?
     var lastIndexPath: NSIndexPath?
+    var ImageCellHeight: CGFloat = 150.0
     
     func initDataArray() {
         self.dataArray = Array()
@@ -69,7 +70,7 @@ class ViewController: UIViewController, UITableViewDelegate, UITableViewDataSour
         
         self.initDataArray()
         self.setupTable()
-        lastIndexPath = NSIndexPath(forRow: -1, inSection: 0)
+        lastIndexPath = NSIndexPath(forRow: -9999, inSection: 0)
     }
 
     override func didReceiveMemoryWarning() {
@@ -108,7 +109,7 @@ class ViewController: UIViewController, UITableViewDelegate, UITableViewDataSour
     func tableView(tableView: UITableView, heightForRowAtIndexPath indexPath: NSIndexPath) -> CGFloat {
         let model = self.dataArray![indexPath.row] as? CategoryModel
         if model!.isShowPicture {
-            return 150.0
+            return ImageCellHeight
         }else {
             return 240.0
         }
@@ -116,15 +117,19 @@ class ViewController: UIViewController, UITableViewDelegate, UITableViewDataSour
     
     func tableView(tableView: UITableView, didSelectRowAtIndexPath indexPath: NSIndexPath) {
         
-        if self.lastIndexPath!.row == -1 {
+        if self.lastIndexPath!.row == -9999 {
             let currentModel = self.dataArray![indexPath.row] as? CategoryModel
             currentModel!.isShowPicture = !currentModel!.isShowPicture
             
             let cell = tableView.cellForRowAtIndexPath(indexPath) as? CategoryCell
+            // 动态修改cell的高度
+            tableView.beginUpdates()
+            tableView.endUpdates()
             
             let currentCellRect = tableView.rectForRowAtIndexPath(indexPath)
             
-            if tableView.contentOffset.y > currentCellRect.origin.y {
+            // cell的高度变化后，cell的y没有变化， 所以应该用变化前的cell的高度进行判断
+            if currentCellRect.origin.y - tableView.contentOffset.y < ImageCellHeight{
                 // 当前cell的可视区域超出了tableView的top
                 let delay = 0.1 * Double(NSEC_PER_SEC)
                 let time = dispatch_time(DISPATCH_TIME_NOW, Int64(delay))
@@ -142,18 +147,20 @@ class ViewController: UIViewController, UITableViewDelegate, UITableViewDataSour
             self.lastIndexPath = indexPath
             cell!.cellClickWithModel(currentModel)
             
-            // 动态修改cell的高度
+            // 动态修正cell的高度
             tableView.beginUpdates()
             tableView.endUpdates()
         }else {
             if self.lastIndexPath!.row != indexPath.row {
                 let currentModel = self.dataArray![indexPath.row] as? CategoryModel
                 currentModel!.isShowPicture = !currentModel!.isShowPicture
-                
+                // 动态修改cell的高度
+                tableView.beginUpdates()
+                tableView.endUpdates()
                 let cell = tableView.cellForRowAtIndexPath(indexPath) as? CategoryCell
                 let currentCellRect = tableView.rectForRowAtIndexPath(indexPath)
                 
-                if tableView.contentOffset.y > currentCellRect.origin.y {
+                if currentCellRect.origin.y - tableView.contentOffset.y < ImageCellHeight {
                     // 当前cell的可视区域超出了tableView的top
                     let delay = 0.1 * Double(NSEC_PER_SEC)
                     let time = dispatch_time(DISPATCH_TIME_NOW, Int64(delay))
@@ -177,19 +184,21 @@ class ViewController: UIViewController, UITableViewDelegate, UITableViewDataSour
                     last.cellClickWithModel(lastModel)
                 }
                 self.lastIndexPath = indexPath
-                // 动态修改cell的高度
+                // 动态修正cell的高度
                 tableView.beginUpdates()
                 tableView.endUpdates()
                 
             }else {
                 let currentModel = self.dataArray![indexPath.row] as? CategoryModel
                 currentModel!.isShowPicture = !currentModel!.isShowPicture
-                
+                // 动态修改cell的高度
+                tableView.beginUpdates()
+                tableView.endUpdates()
                 let cell = tableView.cellForRowAtIndexPath(indexPath) as? CategoryCell
                 // 滚动tableView 到 top 或者 bottom
                 let currentCellRect = tableView.rectForRowAtIndexPath(indexPath)
                 
-                if tableView.contentOffset.y > currentCellRect.origin.y {
+                if currentCellRect.origin.y - tableView.contentOffset.y < ImageCellHeight {
                     // 当前cell的可视区域超出了tableView的top
                     let delay = 0.1 * Double(NSEC_PER_SEC)
                     let time = dispatch_time(DISPATCH_TIME_NOW, Int64(delay))
@@ -208,7 +217,7 @@ class ViewController: UIViewController, UITableViewDelegate, UITableViewDataSour
                 cell!.cellClickWithModel(currentModel)
                 
                 self.lastIndexPath = indexPath
-                // 动态改变cell的高度
+                // 动态修正cell的高度
                 tableView.beginUpdates()
                 tableView.endUpdates()
             }

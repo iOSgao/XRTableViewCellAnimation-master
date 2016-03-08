@@ -8,7 +8,7 @@
 
 import UIKit
 
-let animationTime: NSTimeInterval = 0.3
+let animationTime: NSTimeInterval = 0.4
 let productBaseTag: Int = 2000
 
 func RGBColor(r: CGFloat, g: CGFloat, b: CGFloat) -> UIColor {
@@ -49,7 +49,7 @@ class CategoryCell: UITableViewCell {
         self.imageVw?.addSubview(self.cateLabel!)
         
         self.topBtn = UIButton()
-        self.topBtn?.backgroundColor = UIColor.blackColor().colorWithAlphaComponent(0.9)
+        self.topBtn?.backgroundColor = UIColor.blackColor().colorWithAlphaComponent(0.7)
         self.topBtn?.userInteractionEnabled = false
         self.topLabel = UILabel()
         self.topLabel?.font = UIFont.systemFontOfSize(14.0)
