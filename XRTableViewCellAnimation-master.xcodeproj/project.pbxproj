@@ -8,7 +8,6 @@
 
 /* Begin PBXBuildFile section */
 		0113E6691C8D2665005359F0 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0113E6681C8D2665005359F0 /* AppDelegate.swift */; };
-		0113E66B1C8D2665005359F0 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0113E66A1C8D2665005359F0 /* ViewController.swift */; };
 		0113E66E1C8D2665005359F0 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 0113E66C1C8D2665005359F0 /* Main.storyboard */; };
 		0113E6701C8D2665005359F0 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 0113E66F1C8D2665005359F0 /* Assets.xcassets */; };
 		0113E6731C8D2665005359F0 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 0113E6711C8D2665005359F0 /* LaunchScreen.storyboard */; };
@@ -18,6 +17,7 @@
 		0113E6A31C8D2B17005359F0 /* CategoryCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0113E6A11C8D2B17005359F0 /* CategoryCell.swift */; };
 		0113E6A81C8D5884005359F0 /* AFImageExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0113E6A61C8D5884005359F0 /* AFImageExtension.swift */; };
 		0113E6A91C8D5884005359F0 /* AFImageVIewExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0113E6A71C8D5884005359F0 /* AFImageVIewExtension.swift */; };
+		0115079E1C8ED0BC00839CBB /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0115079D1C8ED0BC00839CBB /* ViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -40,7 +40,6 @@
 /* Begin PBXFileReference section */
 		0113E6651C8D2665005359F0 /* XRTableViewCellAnimation-master.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "XRTableViewCellAnimation-master.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		0113E6681C8D2665005359F0 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
-		0113E66A1C8D2665005359F0 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = ViewController.swift; path = ../../ViewController.swift; sourceTree = "<group>"; };
 		0113E66D1C8D2665005359F0 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		0113E66F1C8D2665005359F0 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		0113E6721C8D2665005359F0 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
@@ -55,6 +54,7 @@
 		0113E6A11C8D2B17005359F0 /* CategoryCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CategoryCell.swift; sourceTree = "<group>"; };
 		0113E6A61C8D5884005359F0 /* AFImageExtension.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AFImageExtension.swift; sourceTree = "<group>"; };
 		0113E6A71C8D5884005359F0 /* AFImageVIewExtension.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AFImageVIewExtension.swift; sourceTree = "<group>"; };
+		0115079D1C8ED0BC00839CBB /* ViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -155,7 +155,7 @@
 		0113E69A1C8D2A33005359F0 /* Controllers */ = {
 			isa = PBXGroup;
 			children = (
-				0113E66A1C8D2665005359F0 /* ViewController.swift */,
+				0115079D1C8ED0BC00839CBB /* ViewController.swift */,
 			);
 			path = Controllers;
 			sourceTree = "<group>";
@@ -316,7 +316,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				0113E66B1C8D2665005359F0 /* ViewController.swift in Sources */,
+				0115079E1C8ED0BC00839CBB /* ViewController.swift in Sources */,
 				0113E6A81C8D5884005359F0 /* AFImageExtension.swift in Sources */,
 				0113E69E1C8D2AE0005359F0 /* CategoryModel.swift in Sources */,
 				0113E6A91C8D5884005359F0 /* AFImageVIewExtension.swift in Sources */,
